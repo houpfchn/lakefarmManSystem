@@ -1,1 +1,3 @@
-这是江湖农场后台管理
+this is lakefarm Manager System!
+hello world!
+Git寮�鍙戞祦绋嬫祴璇曪紒
