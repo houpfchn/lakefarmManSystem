@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.user.dao.ManagerDao">
+
+	<resultMap type="Manager" id="ManagerResult">
+		<result property="man_id" column="man_id"/>
+		<result property="man_managername" column="man_managername"/>
+		<result property="man_password" column="man_password"/>
+		<result property="man_identity" column="man_identity"/>
+		<result property="man_true_name" column="man_true_name"/>
+		<result property="man_email" column="man_email"/>
+		<result property="man_icon" column="man_icon"/>
+	</resultMap>
+	
+	<select id="managerLogin" parameterType="Manager" resultMap="ManagerResult">
+		select * from manager where man_managername=#{man_managername} and man_password=#{man_password} and man_identity=#{man_identity}
+	</select>
+	
+	<!--<select id="find" parameterType="Map" resultMap="UserResult">-->
+		<!--select * from t_user-->
+		<!--<where>-->
+			<!--<if test="userName!=null and userName!='' ">-->
+				<!--and userName like #{userName}-->
+			<!--</if>-->
+			<!--<if test="roleName!=null and roleName!='' ">-->
+				<!--and roleName like #{roleName}-->
+			<!--</if>-->
+		<!--</where>-->
+		<!--<if test="start!=null and size!=null">-->
+			<!--limit #{start},#{size}-->
+		<!--</if>-->
+	<!--</select>-->
+	<!---->
+	<!--<select id="getTotal" parameterType="Map" resultType="Long">-->
+		<!--select count(*) from t_user-->
+		<!--<where>-->
+			<!--<if test="userName!=null and userName!='' ">-->
+				<!--and userName like #{userName}-->
+			<!--</if>-->
+			<!--<if test="roleName!=null and roleName!='' ">-->
+				<!--and roleName like #{roleName}-->
+			<!--</if>-->
+		<!--</where>-->
+	<!--</select>-->
+	<!---->
+	<!--<insert id="add" parameterType="User">-->
+		<!--insert into t_user values(null,#{userName},#{password},#{trueName},#{email},#{phone},#{roleName})-->
+	<!--</insert>-->
+	<!---->
+	<!--<update id="update" parameterType="User">-->
+		<!--update t_user-->
+		<!--<set>-->
+			<!--<if test="userName!=null and userName!='' ">-->
+				<!--userName=#{userName},-->
+			<!--</if>-->
+			<!--<if test="password!=null and password!='' ">-->
+				<!--password=#{password},-->
+			<!--</if>-->
+			<!--<if test="trueName!=null and trueName!='' ">-->
+				<!--trueName=#{trueName},-->
+			<!--</if>-->
+			<!--<if test="email!=null and email!='' ">-->
+				<!--email=#{email},-->
+			<!--</if>-->
+			<!--<if test="phone!=null and phone!='' ">-->
+				<!--phone=#{phone},-->
+			<!--</if>-->
+			<!--<if test="roleName!=null and roleName!='' ">-->
+				<!--roleName=#{roleName},-->
+			<!--</if>-->
+		<!--</set>-->
+		<!--where id=#{id}-->
+	<!--</update>-->
+	<!---->
+	<!--<delete id="delete" parameterType="Integer">-->
+		<!--delete from t_user where id=#{id}-->
+	<!--</delete>-->
+</mapper> 
